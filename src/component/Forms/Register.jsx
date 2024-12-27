@@ -10,11 +10,6 @@ function Register() {
 
   const { setIsLogin } = useContext(ContextAPI);
 
-  const handleToggle = () => {
-    alert("User Registered Successfully");
-    setIsLogin(false);
-  };
-
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -35,6 +30,8 @@ function Register() {
       })
       .then((data) => {
         console.log("New User Added:", data);
+        alert("User Registered Successfully");
+        setIsLogin(false);
       })
       .catch((err) => {
         console.error("Error:", err.message);
@@ -65,7 +62,6 @@ function Register() {
             inputType="Register"
             className="bg-blue-500 rounded-lg text-white p-2 w-full hover:bg-blue-600"
             type="submit"
-            onClickHandler={handleToggle}
           />
           <p className="mt-2 text-center">
             Already Have an Account?{" "}
