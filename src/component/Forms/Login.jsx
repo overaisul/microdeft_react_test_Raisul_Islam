@@ -39,7 +39,7 @@ function Login() {
         localStorage.setItem("authToken", data.data.token);
         localStorage.setItem("user", JSON.stringify(data.data.user));
         alert("Login Successful");
-        navigator("/AddCourse");
+        navigator("/Courses");
         console.log("login Successful", data);
       })
       .catch((err) => {

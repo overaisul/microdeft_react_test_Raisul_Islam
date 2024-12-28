@@ -20,7 +20,8 @@ function AddCourse() {
     const token = localStorage.getItem("authToken");
 
     if (!token) {
-      setError("Authentication token is missing, Please login to add course");
+      alert("Please Login to Add Course");
+      navigator("/");
       return;
     }
 
@@ -44,7 +45,8 @@ function AddCourse() {
       .then((response) => {
         if (!response.ok) {
           console.error("Error");
-          throw new Error("Failed to add course");
+          navigator("/");
+          throw new Error("Failed to add");
         }
         return response.json();
       })
@@ -54,6 +56,7 @@ function AddCourse() {
         navigator("/courses");
       })
       .catch((err) => {
+        setError("Failed to add course");
         console.error("Error:", err.message);
       });
   }
@@ -64,7 +67,7 @@ function AddCourse() {
         <img
           src={AddImage}
           alt="Add Course"
-          className="h-screen w-screen opacity-50"
+          className="h-screen w-screen opacity-70 bg-black/70"
         />
 
         <div className="absolute inset-0 flex items-center justify-center">

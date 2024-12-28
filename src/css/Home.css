@@ -1,3 +1,13 @@
+.background {
+  height: auto;
+  min-height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgb(36, 133, 152) 100%
+  );
+}
 .toggle-container {
   border: 1px solid #ccc;
   border-radius: 5px;

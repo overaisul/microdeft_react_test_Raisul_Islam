@@ -11,13 +11,11 @@ function App() {
   return (
     <>
       <ContextAPI.Provider value={{ isLogin, setIsLogin }}>
-        <div className="background">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/AddCourse" element={<AddCourse />} />
-            <Route path="/courses" element={<Course />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/AddCourse" element={<AddCourse />} />
+          <Route path="/courses" element={<Course />} />
+        </Routes>
       </ContextAPI.Provider>
     </>
   );
